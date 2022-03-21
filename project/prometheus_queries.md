@@ -20,4 +20,4 @@ sum(rate(flask_http_request_total{instance="13.59.232.90:80",status=~"2.."}[5m])
 
 ### The error budget is 20%
 
-1 - ((1 - (sum(increase(flask_http_request_total{instance="13.59.232.90:80", code="200"}[7d])) by (verb)) / sum(increase(flask_http_request_total{instance="13.59.232.90:80"}[7d])) by (verb)) / (1-0.8))
+1 - ((1 - (sum(increase(apiserver_request_total{job="apiserver", code="200"}[7d])) by (verb)) / sum(increase(apiserver_request_total{job="apiserver"}[7d])) by (verb)) / (1 - .80))
